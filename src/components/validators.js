@@ -8,10 +8,10 @@ export const nonEmpty = value =>
 	value.trim() !== "" ? undefined : "Field must not be empty";
 export const checkLength = value =>
 	value.length === 5 ? undefined : "Length of tracking # must be 5 :)";
-export const checkChar = value => {
-	let strNumberArr = value.split();
-	return strNumberArr.forEach(
-		strNum =>
-			Number(strNum) !== "NaN" ? undefined : "That aint a number brother"
-	);
-};
+export const checkChar = value =>
+	isNaN(value) ? "That aint a number brother" : undefined;
+
+// strNumberArr.find(
+// 	strNum =>
+// 		Number(strNum) !== "NaN" ? undefined : "That aint a number brother"
+// );
