@@ -1,23 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
-
-const dogReducer = (state = {}, action) => {
-  return state;
-};
-
-const store = createStore(dogReducer, applyMiddleware(thunk));
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+// import { createStore, applyMiddleware, combineReducers } from "redux";
+// import thunk from "redux-thunk";
+import "./index.css";
+import App from "./App";
+// import { reducer as formReducer } from "redux-form";
+import * as serviceWorker from "./serviceWorker";
+import store from "./store";
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('root')
+	<Provider store={store}>
+		<App />
+	</Provider>,
+	document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change
